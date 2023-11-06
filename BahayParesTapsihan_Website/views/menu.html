@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="icon" href="/images/bahaypareslogo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-02670e9412103b5852dcbe140d278c49.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-light.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+          <div class="logo-container">
+            <a href="/"><img class="logo" src="/images/bahaypareslogo.png" alt="Logo"></a>
+          </div>
+          <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars fa-2x"></i>
+            <input type="hidden" span id="welcomeUsername">
+            <input type="hidden" id="userId" name="userId">
+          </div>
+          <div class="nav-items">
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/Vieworder">Delivery Status</a>
+            <a href="/AboutUs">About Us</a>
+            <a href="/ContactUs">Customer Care</a>
+          </div>
+          <div class="dropdown">
+            <button id="profileIcon" class="dropbtn" style="display: none;">
+              <img src="/images/iconprofile.png" alt="Profile" width="45" height="45">
+            </button>
+            <div class="dropdown-content">
+              <a href="/Profile">Profile</a>
+              <a href="#" id="logoutButton">Logout</a>
+            </div>
+          </div>
+        </nav>
+        <div class="header-content">
+        </div>
+    
+        <!-- Responsive Drawer -->
+        <div class="drawer">
+          <button id="closeDrawer" class="exit-button">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="nav-items">
+            <table>
+              <tr>
+                <td>
+                  <a href="/Profile" id="profileMenu" style="display: none;">
+                    <div class="profile-link">
+                      <img src="/images/iconprofile.png" alt="Profile">
+                    </div>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><a href="/">Home</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><a href="/menu">Menu</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><a href="/Vieworder">Delivery Status</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><a href="/AboutUs">About Us</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left;"><a href="/ContactUs">Customer Care</a></td>
+              </tr>
+    
+              <tr></tr>
+              <tr>
+                <td>
+                  <a href="#" id="logoutMenu" style="display: none;">Logout</a>
+              </tr>
+    
+            </table>
+          </div>
+        </div>
+      </header>
+      <div class="parallax-background"></div>
+
+
+
+    <div id="loading-overlay">
+        <div id="loading-spinner">
+            <img src="/images/bahaypareslogo.png" alt="Loading..." loading="lazy" class="loader-image">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="categories">
+            <h2>Categories</h2>
+            <div class="category-separator">
+                <input id="show-all-button" class="category-button" type="button" value="SHOW All"
+                    style="background: url('/images/bundle2.jpg') no-repeat; background-size: cover; ">
+                <hr style="border: 1px solid #000; margin: 0;">
+            </div>
+            <div class="categories">
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="COVID MEALS" value="COVID MEALS"
+                        style="background: url('/images/bahaypares_covidmeals.jpg') no-repeat; background-size:100%; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="SILOG MEALS" value="SILOG MEALS"
+                        style="background: url('/images/silogbundle.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="PARES MEALS" value="PARES MEALS"
+                        style="background: url('/images/bahaypares_pares.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="ALA CARTE" value="ALA CARTE"
+                        style="background: url('/images/bahaypares_alacarte.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="ISOLATION SPECIAL"
+                        value="ISOLATION SPECIAL"
+                        style="background: url('/images/bahaypares_isolation.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="EXTRA MEALS" value="EXTRA MEALS"
+                        style="background: url('/images/bahaypares_extrameals.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="DELTA VARIANT" value="DELTA VARIANT"
+                        style="background: url('/images/bahaypares_deltavariant.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="BEVERAGES" value="BEVERAGES"
+                        style="background: url('/images/bahaypares_drinks.jpg') no-repeat; background-size: cover; ">
+                </div>
+
+                <div class="category-box">
+                    <input class="category-button" type="button" data-category="OTHERS" value="OTHERS"
+                        style="background: url('/images/bundle2.jpg') no-repeat; background-size: cover; ">
+                </div>
+            </div>
+
+        </div>
+        <!--<div class="categories">
+            <h2>Categories</h2>
+            <div class="category-item"><a href="/dishes">Dishes</a></div>
+            <div class="category-item"><a href="/bundle">Bundles</a></div>
+            <div class="category-item"><a href="/cocktail">Cocktails</a></div>
+        </div>-->
+        <div class="menu-container">
+
+            <div>
+                <!-- Category Header -->
+                <h2 id="category-header">COVID MEALS</h2>
+                <!--Search-->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for items...">
+                    <button id="search-button" style="display: none;">Search</button>
+                    <div class="allergen-logo">
+                        <a href="link-to-milk" data-icon="Milk"><i class="fa-solid fa-cow"></i></a>
+                        <a href="link-to-eggs" data-icon="Egg"><i class="fas fa-egg"></i></a>
+                        <a href="link-to-soy" data-icon="Fish"><i class="fa-solid fa-shrimp"></i></a>
+                        <a href="link-to-soy" data-icon="Tree nut"><i class="fa-solid fa-acorn"></i></a>
+                        <a href="link-to-soy" data-icon="Peanut"><i class="fa-solid fa-peanuts"></i></a>
+                        <a href="link-to-wheat" data-icon="bread"><i class="fas fa-bread-slice"></i></a>
+                        <a href="link-to-soybean" data-icon="Soy"><i class="fa-brands fa-pagelines"></i></a>
+                    </div>
+                </div>
+
+
+                <table>
+                    <tbody id="menuTableBody2">
+                        <!-- Table rows will be dynamically populated here -->
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Cart</h2>
+
+            <table class="cart-table">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+                <tbody id="cart-items"></tbody>
+            </table>
+            <div class="cart-total" id="cart-total" style="display: none;">SubTotal: Php 0.00</div>
+            <button class="confirm-order-btn" id="confirm-order-btn" onclick="confirmOrder()"
+                style="display: none;">Confirm Order</button>
+        </div>
+    </div>
+    </div>
+
+    <!-- Overlay for "Restaurant Closed" -->
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Currently Closed</h2>
+            <p>Sorry, but Bahay Pares Tapsihan is currently closed. Please try again during our operating hours.</p>
+            <br>
+            <p>Thank you!</p>
+            <br>
+            <button onclick="redirectToHomePage()">OK</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/tapsihansapasongbayog/" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Bahay Pares Tapsihan – Dasmariñas.
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            checkRestaurantState();
+            fetchMenuData("COVID MEALS");
+        }
+        // Add this at the beginning of your JavaScript code
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        let currentFilterTerm = ''; // Track the current filter term
+        let searchInputValue = ''; // Track the current search input value
+        let iconFilterTerm = ''; // Track the current icon filter term
+        // Function to show the loading overlay
+        function showLoading() {
+            loadingOverlay.style.display = 'block';
+            loadingSpinner.style.display = 'block';
+        }
+
+        // Function to hide the loading overlay
+        function hideLoading() {
+            loadingOverlay.style.display = 'none';
+            loadingSpinner.style.display = 'none';
+        }
+
+        // Function to check restaurant state and display overlay
+        function checkRestaurantState() {
+            fetch('/checkRestaurantState')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.state === 'Closed') {
+                        document.getElementById('overlay').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        function redirectToHomePage() {
+            window.location.href = '/';
+        }
+
+        const iconLinks = document.querySelectorAll('.allergen-logo a');
+
+        iconLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the link from navigating
+                const iconText = event.currentTarget.dataset.icon; // Get the data-icon attribute
+
+                // Toggle the icon filter term
+                if (iconFilterTerm === iconText.toLowerCase()) {
+                    iconFilterTerm = ''; // Clear the filter term when clicking the same icon again
+                    console.log(`${iconText} is toggled off.`);
+                } else {
+                    iconFilterTerm = iconText.toLowerCase();
+                    console.log(`${iconText} is toggled on.`);
+                }
+
+                filterMenuItems(searchInputValue, iconFilterTerm);
+            });
+        });
+
+
+        // Get the username from sessionStorage
+        const username = sessionStorage.getItem('username');
+        console.log('usernmae:', username);
+
+        if (username) {
+            // Update the welcomeUsername element with the username
+            const welcomeUsername = document.getElementById('welcomeUsername');
+            welcomeUsername.textContent = username;
+
+            // Fetch the userId based on the displayed username
+            sessionStorage.setItem('username', username);
+            fetch(`/getUserByUserName?username=${username}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.userId) {
+                        // User found, store userId in sessionStorage
+                        sessionStorage.setItem('userId', data.userId);
+                    } else {
+                        // Handle the case where the user was not found
+                        console.error('User not found');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching userId:', error);
+                });
+        } else {
+            // User is not logged in, you can choose to do nothing or display a login prompt
+            // Here, we will not show the login prompt
+            // const loginPrompt = document.getElementById('login-prompt');
+            // loginPrompt.style.display = 'block'; // Show the login prompt
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Click event handler for the Profile link
+            const profileLink = document.querySelector('a3[href="/Profile"]');
+            profileLink.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default navigation behavior
+                const welcomeUsername = document.getElementById('welcomeUsername').textContent;
+                sessionStorage.setItem('welcomeUsername', welcomeUsername);
+                window.location.href = '/Profile'; // Navigate to the "Profile" page
+            });
+
+            // Click event handler for the Vieworder link
+            const viewOrderLink = document.querySelector('a[href="/Vieworder"]');
+            viewOrderLink.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default navigation behavior
+                const welcomeUsername = document.getElementById('welcomeUsername').textContent;
+                sessionStorage.setItem('welcomeUsername', welcomeUsername);
+                window.location.href = '/Vieworder'; // Navigate to the "Vieworder" page
+            });
+
+            // Click event handler for the transactionpage link
+            const transactionLink = document.querySelector('a[href="/transactionpage"]');
+            if (transactionLink) {
+                transactionLink.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default navigation behavior
+                    const welcomeUsername = document.getElementById('welcomeUsername').textContent;
+                    sessionStorage.setItem('welcomeUsername', welcomeUsername);
+                    window.location.href = '/transactionpage'; // Navigate to the "transactionpage" page
+                });
+            }
+
+
+        });
+
+
+        const cartItems = [];
+        const confirmOrderBtn = document.getElementById("confirm-order-btn");
+        const cartTotalElement = document.getElementById("cart-total");
+
+        function addToCart(itemName, itemPrice) {
+            const row = event.target.closest('tr'); // Find the parent row of the clicked button
+            const quantityInput = row.querySelector('.quantity-input');
+            const quantity = parseInt(quantityInput.value);
+            if (quantity < 1) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+
+            // Check if the item is already in the cart
+            const existingCartItem = cartItems.find(item => item.name === itemName);
+            if (existingCartItem) {
+                existingCartItem.quantity += quantity; // Update the quantity
+            } else {
+                const cartItem = {
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: quantity
+                };
+                cartItems.push(cartItem); // Add new item to cart
+            }
+
+            updateCart();
+            quantityInput.value = "1"; // Reset quantity input to 1 after adding to cart
+            confirmOrderBtn.style.display = cartItems.length > 0 ? "block" : "none";
+            cartTotalElement.style.display = cartItems.length > 0 ? "block" : "none";
+        }
+
+        function removeAllFromCart(itemName) {
+            const itemIndex = cartItems.findIndex(item => item.name === itemName);
+            if (itemIndex !== -1) {
+                const item = cartItems[itemIndex];
+                cartItems.splice(itemIndex, 1);
+
+                updateCart();
+                confirmOrderBtn.style.display = cartItems.length > 0 ? "block" : "none";
+                cartTotalElement.style.display = cartItems.length > 0 ? "block" : "none";
+            }
+        }
+
+        function addFromCart(itemName) {
+            const itemIndex = cartItems.findIndex(item => item.name === itemName);
+            if (itemIndex !== -1) {
+                const item = cartItems[itemIndex];
+                item.quantity++;
+
+                updateCart();
+                confirmOrderBtn.style.display = cartItems.length > 0 ? "block" : "none";
+                cartTotalElement.style.display = cartItems.length > 0 ? "block" : "none";
+            }
+        }
+
+        function removeFromCart(itemName) {
+            const itemIndex = cartItems.findIndex(item => item.name === itemName);
+            if (itemIndex !== -1) {
+                const item = cartItems[itemIndex];
+                if (item.quantity > 1) {
+                    item.quantity--; // Decrease quantity by 1
+                } else {
+                    cartItems.splice(itemIndex, 1); // Remove the item completely if quantity is 0
+                }
+                updateCart();
+                confirmOrderBtn.style.display = cartItems.length > 0 ? "block" : "none";
+                cartTotalElement.style.display = cartItems.length > 0 ? "block" : "none";
+            }
+        }
+
+
+        function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            cartList.innerHTML = "";
+
+            let total = 0;
+            cartItems.forEach(item => {
+                const row = document.createElement("tr");
+                const itemNameCell = document.createElement("td");
+                itemNameCell.innerText = item.name;
+                row.appendChild(itemNameCell);
+
+                const itemPriceCell = document.createElement("td");
+                itemPriceCell.innerText = `Php ${item.price.toFixed(2)}`;
+                row.appendChild(itemPriceCell);
+
+                const itemQuantityCell = document.createElement("td");
+                itemQuantityCell.innerText = item.quantity;
+                row.appendChild(itemQuantityCell);
+
+                // Create a container for the buttons
+                const buttonContainer = document.createElement("div");
+                buttonContainer.classList.add("button-container");
+
+                // Create a common class for all buttons
+                const commonButtonClass = "common-button";
+
+                // Add an "Add" button
+                const addButton = document.createElement("button");
+                addButton.innerText = "+";
+                addButton.classList.add(commonButtonClass);
+                addButton.addEventListener("click", () => addFromCart(item.name));
+                buttonContainer.appendChild(addButton);
+
+                // Add a "Remove All" button
+                const removeAllButton = document.createElement("button");
+                removeAllButton.innerText = "Remove";
+                removeAllButton.addEventListener("click", () => removeAllFromCart(item.name));
+                removeAllButton.classList.add(commonButtonClass);
+                buttonContainer.appendChild(removeAllButton);
+
+                // Add a "Remove" button
+                const removeButton = document.createElement("button");
+                removeButton.innerText = "-";
+                removeButton.classList.add(commonButtonClass);
+                removeButton.addEventListener("click", () => removeFromCart(item.name));
+                buttonContainer.appendChild(removeButton);
+
+                row.appendChild(buttonContainer);
+
+                cartList.appendChild(row);
+                total += item.price * item.quantity;
+            });
+
+            cartTotalElement.innerText = `Total: Php ${total.toFixed(2)}`;
+        }
+
+        function generateOrderId() {
+            // Generates a random 3-digit numeric order ID
+            const min = 100; // Minimum 3-digit number (100)
+            const max = 999; // Maximum 3-digit number (999)
+            const orderId = Math.floor(Math.random() * (max - min + 1)) + min;
+            return orderId.toString(); // Convert the number to a string
+        }
+
+
+        function confirmOrder() {
+            const userId = sessionStorage.getItem('userId');
+            if (!userId) {
+                alert('User ID is missing. Please log in or refresh the page.');
+                return;
+            }
+
+            if (cartItems.length === 0) {
+                alert('Your cart is empty. Please add items to the cart first.');
+                return;
+            }
+
+            const orderId = generateOrderId(); // Generate a random order ID
+
+
+            // Store user ID, order ID, cart items, and customer discount in session storage
+            sessionStorage.setItem('userId', userId);
+            sessionStorage.setItem('orderId', orderId);
+            sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            console.log('Generated order ID:', orderId);
+
+            // Send the cart data, order ID, and customer discount to the server
+            fetch('/confirmOrder', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        userId,
+                        orderId,
+                        cartItems,
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data); // Log the entire data object to the console
+
+                    // Check if the message property is present and contains the expected value
+                    if (data && data.message === "Order confirmed proceeding to transaction") {
+                        // Store the userId in sessionStorage for the transaction page
+                        sessionStorage.setItem('userId', userId);
+
+                        // Redirect to the transaction page
+                        window.location.href = '/transactionpage.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error confirming order:', error);
+                    alert('An error occurred while confirming your order.');
+                });
+        }
+
+
+        let menuDataCache = {};
+
+        async function fetchMenuData(category) {
+            console.log("Fetching data for category:", category);
+            showLoading();
+
+            try {
+                // Check if data is already cached
+                if (menuDataCache[category]) {
+                    console.log("Data found in cache for category:", category);
+                    updateUI(menuDataCache[category], category);
+                    hideLoading();
+                }
+
+                const response = await fetch(`/menufetch2?category=${category}`);
+                let data = await response.json();
+
+                // Sort the data alphabetically based on the 'name' property
+                data.sort((a, b) => a.name.localeCompare(b.name));
+
+                // Cache the sorted data
+                menuDataCache[category] = data;
+                console.log("Data fetched for category:", category);
+
+                updateUI(data, category);
+            } catch (error) {
+                console.error('Error fetching menu data:', error);
+            } finally {
+                hideLoading();
+            }
+        }
+
+
+        // when you click show all
+        const showAllButton = document.getElementById('show-all-button');
+
+        showAllButton.addEventListener('click', () => {
+            showLoading();
+
+            try {
+                iconFilterTerm = ''; // Clear the icon filter term
+                searchInputValue = ''; // Clear the search input value
+
+                fetch('/fetchAllItems')
+                    .then(response => response.json())
+                    .then(data => {
+                        updateUI(data, "All Items"); // Update the UI with all items
+                        hideLoading(); // Hide loading indicator after updating the UI
+                    })
+                    .catch(error => {
+                        console.error('Error fetching all items:', error);
+                        hideLoading(); // Hide loading indicator in case of an error
+                    });
+            } catch (error) {
+                console.error('Error fetching menu data:', error);
+                hideLoading(); // Hide loading indicator in case of an error
+            }
+        });
+
+
+
+        function updateUI(data, category) {
+            const dataBody = document.getElementById('menuTableBody2');
+            const fragment = document.createDocumentFragment();
+            dataBody.innerHTML = '';
+
+            // Update the category header
+            const categoryHeader = document.getElementById('category-header');
+            categoryHeader.textContent = category;
+
+            for (const menu of data) {
+                const row = document.createElement('tr');
+                row.setAttribute('data-name', menu.name);
+                row.setAttribute('data-status', menu.status);
+                row.setAttribute('data-description', menu.description);
+
+                const imageCell = document.createElement('td');
+                const img = new Image();
+                img.src = `data:image/jpeg;base64,${menu.image}`;
+                img.alt = menu.name;
+                img.style.maxWidth = '100px';
+                img.loading = 'lazy'; // Add the 'loading' attribute
+                imageCell.appendChild(img);
+
+                const nameAndStatusCell = document.createElement('td');
+                nameAndStatusCell.classList.add('name-status-cell');
+
+                // Create a heading for the menu item name
+                const itemName = document.createElement('h3');
+
+                // Create a span element for the status text
+                const statusSpan = document.createElement('span');
+                const statusText = getStatusText(menu.status);
+                statusSpan.textContent = statusText;
+
+                // Apply different styles to the status span based on the status
+                if (menu.status === 'sale') {
+                    statusSpan.style.color = 'red';
+                } else if (menu.status === 'featured') {
+                    statusSpan.style.color = 'blue';
+                } else if (menu.status === 'new') {
+                    statusSpan.style.color = 'green';
+                } else {
+                    statusSpan.style.display = 'none';
+                }
+
+                // Combine the name and status elements
+                itemName.appendChild(document.createTextNode(menu.name + ' '));
+                itemName.appendChild(statusSpan);
+                // Create a paragraph for the menu item description
+                const itemDescription = document.createElement('p');
+                itemDescription.textContent = menu.description;
+
+                const priceCell = document.createElement('h5');
+                priceCell.textContent = "₱ " + menu.price;
+
+                // Append the name, status, and description elements to the nameAndStatusCell
+                nameAndStatusCell.appendChild(itemName);
+                nameAndStatusCell.appendChild(itemDescription);
+                nameAndStatusCell.appendChild(priceCell);
+
+                // Create Quantity input
+                const inputQuantity = document.createElement('input');
+                inputQuantity.type = 'number';
+                inputQuantity.classList.add('quantity-input');
+                inputQuantity.min = '1';
+                inputQuantity.value = '1';
+
+                // Add the Quantity input cell to the row
+                const inputQuantityCell = document.createElement('td');
+                inputQuantityCell.appendChild(inputQuantity);
+
+                // Create AddToCartButton
+                const addToCartButton = document.createElement('button');
+
+                if (menu.availability === true) {
+                    addToCartButton.textContent = 'Add to Cart';
+                    addToCartButton.addEventListener('click', () => {
+                        addToCart(menu.name, parseFloat(menu.price));
+                    });
+                } else {
+                    // Item is not available
+                    addToCartButton.textContent = 'Not Available';
+                    addToCartButton.disabled = true; // Make the button unclickable
+                }
+
+                // Add AddToCartButton to row
+                const addtocartCell = document.createElement('td');
+                addtocartCell.appendChild(addToCartButton);
+
+                row.appendChild(imageCell);
+                row.appendChild(nameAndStatusCell); // Append the name and description cell
+                row.appendChild(inputQuantityCell); // Append the Quantity input cell
+                row.appendChild(addtocartCell);
+
+                fragment.appendChild(row);
+
+            }
+
+            dataBody.appendChild(fragment);
+        }
+
+        // Function for initial filtering
+        function handleInitialFilter() {
+            filterMenuItems(searchInputValue, iconFilterTerm);
+        }
+
+        const categoryButtons = document.querySelectorAll('.category-button');
+        categoryButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                fetchMenuData(category);
+                filterMenuItems(searchInputValue, iconFilterTerm);
+            });
+        });
+
+
+        // Call the initial filtering function when the page loads
+        document.addEventListener('DOMContentLoaded', handleInitialFilter);
+
+        function getStatusText(status) {
+            // Define a function to return the appropriate status text based on the status value
+            if (status === 'sale') {
+                return 'SALE';
+            } else if (status === 'featured') {
+                return 'FEATURED';
+            } else if (status === 'new') {
+                return 'NEW';
+            } else {
+                return ''; // Hide the status for 'default'
+            }
+        }
+        //LOGOUT FUNCTION
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutButton = document.getElementById('logoutButton');
+
+            // Check if the user is authenticated by making a GET request to a route that
+            // returns the user information when authenticated
+            fetch('/check-auth', {
+                    method: 'GET',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.isAuthenticated) {
+                        logoutButton.style.display = 'block';
+                        document.getElementById('profileIcon').style.display = 'block';
+
+                        // Add a click event listener to the logout button
+                        logoutButton.addEventListener('click', function () {
+                            // Display a confirmation dialog
+                            const isConfirmed = window.confirm('Are you sure you want to logout?');
+
+                            // Check if the user confirmed the logout
+                            if (isConfirmed) {
+                                // Send a logout request to the server when confirmed
+                                fetch('/logout', {
+                                        method: 'GET',
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if (data.message === 'Logout successful') {
+                                            // Redirect to the login page or another page after logout
+                                            window.location.href = '/';
+                                        } else {
+                                            console.error('Logout failed:', data.error);
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error during logout:', error);
+                                    });
+                            }
+                        });
+                    } else {
+                        document.getElementById('profileIcon').style.display = 'none';
+                        logoutButton.style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking authentication:', error);
+                });
+        });
+
+        // Event listener for real-time search as the user types
+        searchInput.addEventListener('input', () => {
+            searchInputValue = searchInput.value.trim().toLowerCase();
+
+            // Call the filterMenuItems function to filter out items based on the search input and icon filter term
+            filterMenuItemsOnSearch(searchInputValue);
+        });
+
+        function filterMenuItemsOnSearch(searchTerm) {
+            const menuItems = document.querySelectorAll('[data-name]');
+
+            menuItems.forEach(item => {
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                const itemStatus = item.getAttribute('data-status').toLowerCase();
+                const itemDesc = item.getAttribute('data-description').toLowerCase();
+
+                // Display items based on the search term only
+                const display = searchTerm === '' || itemName.includes(searchTerm) || itemStatus.includes(
+                    searchTerm) || itemDesc.includes(searchTerm);
+                item.style.display = display ? 'table-row' : 'none';
+            });
+        }
+
+        function filterMenuItems(searchTerm, iconTerm) {
+            const menuItems = document.querySelectorAll('[data-name]');
+
+            menuItems.forEach(item => {
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                const itemDesc = item.getAttribute('data-description').toLowerCase();
+                const hasIcon = itemName.includes(iconTerm);
+                const hasIcon2 = itemDesc.includes(iconTerm);
+
+                if (iconTerm) {
+                    // If an icon filter is applied
+                    if (iconTerm === "fish") {
+
+                        if (
+                            itemName.includes("bangus") || itemName.includes("tilapia") ||
+                            itemName.includes("galunggong") || itemName.includes("tuna") ||
+                            itemName.includes("lapu-lapu") || itemName.includes("sardine") ||
+                            itemName.includes("hito") || itemName.includes("dilis") ||
+                            itemName.includes("clam") || itemName.includes("tuyo") ||
+                            itemName.includes("oyster") || itemName.includes("crab") ||
+                            itemName.includes("tinapa") || itemName.includes("pompano") ||
+                            itemName.includes("fish") || itemName.includes("calamares")
+                        ) { //list seafood here ^
+                            item.style.display = 'none'; // Hide the specific fish items
+                        } else {
+                            // Show other non-fish items
+                            item.style.display = 'table-row';
+                        }
+                    } else {
+                        // Handle other icons and search term as before
+                        if (hasIcon || hasIcon2) {
+                            // Hide items with the selected icon
+                            item.style.display = 'none';
+                        } else if (searchTerm === '' || itemName.includes(searchTerm)) {
+                            // Show items that match the search term and don't have the selected icon
+                            item.style.display = 'table-row';
+                        }
+                    }
+                } else {
+                    // No icon filter, only use the search term
+                    const display = searchTerm === '' || itemName.includes(searchTerm) || itemDesc.includes(
+                        searchTerm);
+                    item.style.display = display ? 'table-row' : 'none';
+                }
+            });
+        }
+
+        const parallaxBackground = document.querySelector('.parallax-background');
+
+    window.addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY;
+      // Adjust the image height based on the scroll position
+      parallaxBackground.style.height = 400 - scrollPosition * 0.5 + 'px';
+    });
+    </script>
+
+
+</body>
+
+</html>

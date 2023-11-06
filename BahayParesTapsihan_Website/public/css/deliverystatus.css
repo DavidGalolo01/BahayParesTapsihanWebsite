@@ -1,0 +1,136 @@
+.tab {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .tab button {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 20px 120px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .tab button:hover {
+    background-color: #ddd;
+  }
+
+  .tab button.active {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .containers {
+    max-width: 650px;
+  }
+
+  .order-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .order-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .order-header span {
+    font-weight: bold;
+    margin-right: 20px;
+  }
+
+  .order-items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+  }
+
+  .item {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .order-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .cancel-button {
+    background-color: #FF0000;
+    /* Red background color */
+    color: #FFF;
+    /* White text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    /* Rounded corners */
+  }
+
+  .cancel-button:hover {
+    background-color: #FF3333;
+    /* Lighter red background on hover */
+  }
+
+  .order-header span {
+    font-weight: normal;
+  }
+  .containers {
+    max-width: 400px;
+    padding: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .order-details {
+      margin: 0 auto; /* Center the table horizontally */
+      max-width: 800px; /* Set the maximum width for the table container */
+    }
+    
+    .order-details table {
+      width: 100%; /* Set the table width to 100% of its container */
+      border-collapse: collapse; /* Collapse the table borders */
+    }
+    table.center {
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    .order-details th,
+    .order-details td {
+      padding: 8px; /* Add padding to table cells */
+      border:  1px solid #ccc;
+    }
+    
+    .order-details thead th {
+      background-color: #f2f2f2; /* Set background color for table header cells */
+    }
+    
+    .order-details tfoot td {
+      background-color: #f2f2f2; /* Set background color for table footer cells */
+      font-weight: bold; /* Set font weight for total price cell */
+    }
+    
+    table tbody tr:nth-child(even) {
+      background-color: white;
+    }
