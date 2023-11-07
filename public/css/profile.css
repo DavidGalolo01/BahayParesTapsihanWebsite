@@ -1,0 +1,95 @@
+/* Add CSS styles for the round container */
+.profile-container {
+  margin: auto;
+  max-width: 400px;
+  text-align: left;
+  /* Adjust padding */
+  padding: 40px 200px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Add styles for the edit profile popup */
+.edit-profile-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  /* Add display flex */
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-profile-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.edit-profile-popup-content .form-group {
+  margin-bottom: 10px;
+  /* Add some space between form groups */
+}
+
+.edit-profile-popup-content .form-group label {
+  display: inline-block;
+  width: 120px;
+  /* Adjust the width to your preference */
+}
+
+.edit-profile-popup-content .form-group input {
+  display: inline-block;
+  width: 250px;
+  /* Adjust the width to your preference */
+}
+
+.edit-profile-popup-content .button-group {
+  text-align: right;
+  /* Align buttons to the right */
+}
+
+.edit-profile-popup-content .button-group .update-button {
+  background-color: #007BFF;
+  /* Add a background color for the "Update Profile" button */
+  color: white;
+  /* Text color for the button */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  /* Add space between the buttons */
+}
+
+.edit-profile-popup-content .button-group .close-button {
+  background-color: #ccc;
+  /* Add a background color for the "Close" button */
+  color: black;
+  /* Text color for the button */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.fas.fa-eye {
+  cursor: pointer;
+  margin-right: 5px;
+  color: #007BFF;
+}
+
+.fas.fa-edit {
+  cursor: pointer;
+  margin-right: 5px;
+  color: #007BFF;
+}
+
+.input-field {
+  display: inline-block;
+  width: 250px;
+  /* Adjust the width to your preference */
+  /* Add any other custom styles you want to apply to all input fields */
+}

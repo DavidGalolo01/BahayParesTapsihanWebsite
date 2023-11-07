@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bahay Pares Tapsihan Home Page</title>
+
+  <link rel="icon" href="/images/bahaypareslogo.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo-container">
+        <a href="/"><img class="logo" src="/images/bahaypareslogo.png" alt="Logo"></a>
+      </div>
+      <div class="menu-icon" id="menuIcon">
+        <i class="fas fa-bars fa-2x"></i>
+        <input type="hidden" span id="welcomeUsername">
+        <input type="hidden" id="userId" name="userId">
+      </div>
+      <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/Vieworder">Delivery Status</a>
+        <a href="/AboutUs">About Us</a>
+        <a href="/ContactUs">Customer Care</a>
+      </div>
+      <div class="dropdown">
+        <button id="profileIcon" class="dropbtn" style="display: none;">
+          <img src="/images/iconprofile.png" alt="Profile" width="45" height="45" class="profile-icon">
+
+        </button>
+        <div class="dropdown-content">
+          <a href="/Profile">Profile</a>
+          <a href="#" id="logoutButton">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header-content">
+    </div>
+
+    <!-- Responsive Drawer -->
+    <div class="drawer">
+      <button id="closeDrawer" class="exit-button">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="nav-items">
+        <table>
+          <tr>
+            <td>
+              <a href="/Profile" id="profileMenu" style="display: none;">
+                <div class="profile-link">
+                  <img src="/images/iconprofile.png" alt="Profile">
+                </div>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left;"><a href="/">Home</a></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;"><a href="/menu">Menu</a></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;"><a href="/Vieworder">Delivery Status</a></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;"><a href="/AboutUs">About Us</a></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;"><a href="/ContactUs">Customer Care</a></td>
+          </tr>
+
+          <tr></tr>
+          <tr>
+            <td>
+              <a href="#" id="logoutMenu" style="display: none;">Logout</a>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </header>
+  <div class="parallax-background"></div>
+
+  <section>
+    <div class="main-content">
+      <div class="welcome-signin-container">
+        <div class="welcome-section">
+          <img style="width: 50%; height: 50%;" src="/images/bahaypareslogo.png" alt="Logo">
+          <h2>Welcome to Bahay Pares Tapsihan!</h2>
+          <p>
+            Order delicious food online and have it delivered to your doorstep.
+          </p>
+          <p>
+            Explore our menu and choose from a variety of dishes to satisfy your cravings.
+          </p>
+          <p>
+            Login to get started!
+          </p>
+        </div>
+
+        <div class="signin-login-section" id="signin-login-section">
+          <!-- Login Form -->
+          <div class="login-section">
+            <h2>Login</h2>
+            <div id="message" style="color: red;"></div>
+            <div class="login-form">
+              <form id="loginForm">
+                <div class="inputbox">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  <input type="text" id="searchaccount" name="username" required>
+                  <label>Email</label>
+                </div>
+                <div class="inputbox">
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                  <input type="password" id="password" name="password" required>
+                  <label>Password</label>
+                </div>
+                <button class="loginButton" type="button" onclick="login()">Login</button>
+
+                <div>
+                  <a class="loginFormButton" href="/register">Don't have an account?</a>
+                  <a class="loginFormButton" href="/resetPassword">Forgot Password?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="separator-line"></div>
+
+    <!-- Featured Menu -->
+    <h2>Featured Menu</h2>
+    <a href="/menu">
+
+      <div class="special-offers" id="featuredMenu">
+        <!-- Featured menu items will be displayed here -->
+      </div>
+    </a>
+
+    <div class="separator-line"></div>
+
+    <!-- Special offers -->
+    <h2>Special Offers</h2>
+    <a href="/menu">
+
+      <div class="special-offers" id="saleMenu">
+        <!-- Featured menu items will be displayed here -->
+      </div>
+    </a>
+
+  </section>
+
+
+  <div class="footer">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/tapsihansapasongbayog/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="copyright">
+      &copy; 2023 Bahay Pares Tapsihan – Dasmariñas.
+    </div>
+  </div>
+
+
+  <script>
+    const username = sessionStorage.getItem('username');
+    const userId = sessionStorage.getItem('userId');
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+    const messageElement = document.getElementById('message');
+
+    if (message) {
+      if (message === 'verified') {
+        // Display a green message indicating that the user is verified
+        const alertMessage = 'Your email has been successfully verified. You can now log in.';
+        const greenTextMessage = document.createElement('div');
+        greenTextMessage.style.color = 'green';
+        greenTextMessage.innerHTML = alertMessage;
+        messageElement.innerHTML = '';
+        messageElement.appendChild(greenTextMessage);
+      } else {
+        // Handle other messages, e.g., error messages
+        // Set the message content as HTML (use innerHTML)
+        messageElement.innerHTML = message;
+      }
+    }
+
+
+    async function login() {
+      const username = document.getElementById('searchaccount').value;
+      const password = document.getElementById('password').value;
+      const loginForm = document.getElementById('loginForm');
+      const messageElement = document.getElementById('message'); // Define the message element
+
+      try {
+        const response = await fetch('/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          console.log('Login successful:', result.user);
+          // Store the username in sessionStorage
+          sessionStorage.setItem('username', result.username);
+
+          // Check where to redirect based on the server response
+          if (result.redirectTo) {
+            window.location.href = result.redirectTo;
+          } else {
+            console.error('Redirection not specified in the server response.');
+            // Handle this case as needed, for example, show an error message
+            alert('An unexpected error occurred during login. Please try again later.');
+          }
+        } else {
+          // Handle specific error messages from the server
+          console.error('Login failed:', result.error);
+          // Display error messages in the message element
+          messageElement.textContent = result.error;
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        // Display a generic error message
+        messageElement.textContent = 'An error occurred while logging in. Please try again later.';
+      }
+    }
+
+    async function fetchFeaturedMenu() {
+      try {
+        const response = await fetch('/featuredmenu'); // Make a GET request to your backend endpoint
+
+        if (response.ok) {
+          const featuredMenuItems = await response.json();
+
+          const featuredMenuContainer = document.getElementById('featuredMenu');
+
+          // Clear existing content
+          featuredMenuContainer.innerHTML = '';
+
+          // Iterate through the featured menu items and create HTML elements to display them
+          featuredMenuItems.forEach(item => {
+            const menuItemDiv = document.createElement('div');
+            menuItemDiv.classList.add('special-offer');
+            menuItemDiv.innerHTML = `
+            <img src="data:image/jpeg;base64,${item.image}" alt="${item.name}" width="400" height="300">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p>Php ${item.price}</p>
+
+          `;
+            featuredMenuContainer.appendChild(menuItemDiv);
+          });
+        } else {
+          console.error('Failed to fetch featured menu items');
+        }
+      } catch (error) {
+        console.error('Error during fetchFeaturedMenu:', error);
+      }
+    }
+
+    async function fetchSaleMenu() {
+      try {
+        const response = await fetch('/salemenu'); // Make a GET request to your backend endpoint
+
+        if (response.ok) {
+          const featuredMenuItems = await response.json();
+
+          const featuredMenuContainer = document.getElementById('saleMenu');
+
+          // Clear existing content
+          featuredMenuContainer.innerHTML = '';
+
+          // Iterate through the featured menu items and create HTML elements to display them
+          featuredMenuItems.forEach(item => {
+            const menuItemDiv = document.createElement('div');
+            menuItemDiv.classList.add('special-offer');
+            menuItemDiv.innerHTML = `
+            <img src="data:image/jpeg;base64,${item.image}" alt="${item.name}" width="400" height="300">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p>Php ${item.price}</p>
+          `;
+            featuredMenuContainer.appendChild(menuItemDiv);
+          });
+        } else {
+          console.error('Failed to fetch featured menu items');
+        }
+      } catch (error) {
+        console.error('Error during fetchFeaturedMenu:', error);
+      }
+    }
+
+    // Call the fetchFeaturedMenu function when the page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      fetchFeaturedMenu();
+      fetchSaleMenu();
+    });
+
+    document.getElementById('password').addEventListener('keyup', function (event) {
+      // Check if the pressed key is "Enter" (key code 13)
+      if (event.keyCode === 13) {
+        // Trigger the login button click
+        document.querySelector('button[type="button"]').click();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Click event handler for the Profile link
+      const profileLink = document.querySelector('a3[href="/Profile"]');
+      profileLink.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default navigation behavior
+        const welcomeUsername = document.getElementById('welcomeUsername').textContent;
+        sessionStorage.setItem('welcomeUsername', welcomeUsername);
+        window.location.href = '/Profile'; // Navigate to the "Profile" page
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuIcon = document.querySelector('.menu-icon'); // Change the selector to use class
+      const drawer = document.querySelector('.drawer');
+      const profileIcon = document.getElementById('profileIcon');
+      const logoutButton = document.getElementById('logoutButton');
+      const profileMenu = document.getElementById('profileMenu');
+      const logoutMenu = document.getElementById('logoutMenu');
+      menuIcon.addEventListener('click', function () {
+        if (drawer.style.left === '0px' || !drawer.style.left) {
+          drawer.style.left = '-250px'; // Hide the drawer
+        } else {
+          drawer.style.left = '0'; // Show the drawer
+        }
+      });
+
+      const closeDrawerButton = document.getElementById('closeDrawer');
+      closeDrawerButton.addEventListener('click', function () {
+        drawer.style.left = '-250px'; // Hide the drawer
+      });
+    });
+    //LOGOUT FUNCTION
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoutButton = document.getElementById('logoutButton');
+      const Profile = document.getElementById('profileIcon');
+      const loginsection = document.getElementById('signin-login-section');
+      const logoutMenu = document.getElementById('logoutMenu');
+      // Check if the user is authenticated by making a GET request to a route that
+      // returns the user information when authenticated
+      fetch('/check-auth', {
+          method: 'GET',
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.isAuthenticated) {
+            logoutButton.style.display = 'block';
+            Profile.style.display = 'block';
+            loginsection.style.display = 'none';
+            const profileIcon = document.getElementById('profileIcon');
+            const profileMenu = document.getElementById('profileMenu');
+            profileIcon.style.display = 'block';
+            profileMenu.style.display = 'block'; // Show in drawer
+            logoutMenu.style.display = 'block';
+            // Add a click event listener to the logout button
+            logoutButton.addEventListener('click', function () {
+              // Display a confirmation dialog
+              const isConfirmed = window.confirm('Are you sure you want to logout?');
+
+              // Check if the user confirmed the logout
+              if (isConfirmed) {
+                // Send a logout request to the server when confirmed
+                fetch('/logout', { // Check if this URL is correct
+                    method: 'GET',
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.message === 'Logout successful') {
+                      // Redirect to the login page or another page after logout
+                      window.location.href = '/';
+                    } else {
+                      console.error('Logout failed:', data.error);
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error during logout:', error);
+                  });
+              }
+            });
+            logoutMenu.addEventListener('click', function () {
+              // Display a confirmation dialog
+              const isConfirmed = window.confirm('Are you sure you want to logout?');
+
+              // Check if the user confirmed the logout
+              if (isConfirmed) {
+                // Send a logout request to the server when confirmed
+                fetch('/logout', { // Check if this URL is correct
+                    method: 'GET',
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    if (data.message === 'Logout successful') {
+                      // Redirect to the login page or another page after logout
+                      window.location.href = '/';
+                    } else {
+                      console.error('Logout failed:', data.error);
+                    }
+                  })
+                  .catch(error => {
+                    console.error('Error during logout:', error);
+                  });
+              }
+            });
+          } else {
+            Profile.style.display = 'none';
+            logoutButton.style.display = 'none';
+            loginsection.style.display = 'block';
+            const profileIcon = document.getElementById('profileIcon');
+            logoutButton.style.display = 'none';
+            profileIcon.style.display = 'none';
+            const profileMenu = document.getElementById('profileMenu');
+            profileMenu.style.display = 'none'; // Show in drawer
+            logoutMenu.style.display = 'none';
+          }
+        })
+        .catch(error => {
+          console.error('Error checking authentication:', error);
+        });
+    });
+
+    const parallaxBackground = document.querySelector('.parallax-background');
+
+    window.addEventListener('scroll', function () {
+      const scrollPosition = window.scrollY;
+      // Adjust the image height based on the scroll position
+      parallaxBackground.style.height = 400 - scrollPosition * 0.5 + 'px';
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

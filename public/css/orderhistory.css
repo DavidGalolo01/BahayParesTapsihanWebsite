@@ -1,0 +1,67 @@
+.tabs {
+    display: inline-block;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Center the tabs and button */
+  }
+
+  .tab {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    /* Background color for tabs */
+  }
+
+  .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin-left: 20px;
+    /* Adjust the spacing between the button and tabs */
+  }
+
+  .download-button:hover {
+    background-color: #0056b3;
+    /* Darker color on hover */
+  }
+
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .container {
+    width: 100%; /* Expand to 100% of the available width */
+    max-width: 1200px; /* Limit the maximum width, adjust as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+  }
+    .containerz {
+    margin:  0 auto;
+    max-width: 1260px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .table-container {
+      margin: 20px auto; /* Center the table horizontally with some spacing */
+      max-width: 100%; /* Ensure the table doesn't overflow the container */
+      overflow-x: auto; /* Enable horizontal scrolling if the table is wider */
+    }
+    
+    .table-container table {
+      width: 100%; /* Make the table expand to the full width of its container */
+      text-align: left; /* Reset text alignment within the table */
+    }

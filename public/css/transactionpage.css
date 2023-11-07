@@ -1,0 +1,137 @@
+.transaction_container {
+    margin-top: 300px;
+
+}
+
+.containers select {
+    width: 100%;
+}
+
+.containers input {
+    width: 96.5%;
+    padding: 10px;
+    /* Add padding for better spacing */
+    font-size: 16px;
+    /* Set font size */
+    border: 1px solid #ccc;
+    /* Add a border */
+    border-radius: 5px;
+    /* Add rounded corners */
+    background-color: #fff;
+    /* Background color */
+}
+
+
+.options-table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Style the tables */
+.options-table {
+    width: 100%;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+.options-table td {
+    padding: 10px;
+}
+
+.options-table label {
+    font-weight: bold;
+}
+
+/* Style the input field */
+.input-location {
+    width: 94%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+
+
+/* Style the buttons */
+.confirm-order-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirm-order-btn:hover {
+    background-color: #0056b3;
+}
+
+.button-like-link {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button-like-link:hover {
+    background-color: #f44336;
+    color: #fff;
+}
+
+/* Style the warning container */
+.warning {
+    /* A formal-looking red color */
+    font-size: 16px;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Style the icon */
+.fas.fa-truck {
+    margin-right: 10px;
+    /* Adjust the spacing between the icon and text */
+}
+
+/* Styles for the overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 5px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.overlay button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+}
