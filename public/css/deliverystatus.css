@@ -7,7 +7,8 @@
   .tab button {
     background-color: #f2f2f2;
     border: none;
-    padding:50px 250px;
+    padding:20px 135px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -21,12 +22,9 @@
     color: white;
   }
 
-  .containers {
-    max-width: fit-content;
-  }
-
   .order-container {
-    border: 1px solid #ddd;
+    border: 3px solid #ddd;
+    background-color: white;
     border-radius: 5px;
     margin: 20px 0;
     padding: 20px;
@@ -58,7 +56,7 @@
   }
 
   .item {
-    flex-basis: calc(33.33% - 20px);
+    flex-basis: calc(93.33% - 20px);
     margin: 10px 10px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -93,11 +91,12 @@
     font-weight: normal;
   }
   .containers {
-    max-width: fit-content;
+    max-width: 35%;
     padding-right: 100px;
     padding-left: 100px;
     border-radius: 10px;
     margin-top: 300px;
+    background-color: #FFFFF0;
     }
     .order-details {
       margin: 0 auto; /* Center the table horizontally */
