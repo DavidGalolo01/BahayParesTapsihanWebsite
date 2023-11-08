@@ -10,7 +10,6 @@
   margin-top: 20px;
 }
 
-<<<<<<< HEAD
 .tab button {
   background-color: #c9c9c9;
   border: none;
@@ -19,16 +18,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-=======
-  .tab button {
-    background-color: #f2f2f2;
-    border: none;
-    padding:20px 135px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
->>>>>>> 5574d335107c4d3bde6eb314af4ef363d97d83e1
 
 .tab button:hover {
   background-color: #ddd;
@@ -39,7 +28,6 @@
   color: white;
 }
 
-<<<<<<< HEAD
 .order-container {
   border: 3px solid #ddd;
   background-color: white;
@@ -52,15 +40,6 @@
   display: flex;
   flex-direction: column;
 }
-=======
-  .order-container {
-    border: 3px solid #ddd;
-    background-color: white;
-    border-radius: 5px;
-    margin: 20px 0;
-    padding: 20px;
-  }
->>>>>>> 5574d335107c4d3bde6eb314af4ef363d97d83e1
 
 .order-header {
   display: flex;
@@ -90,21 +69,11 @@
   background-color: #fff;
 }
 
-<<<<<<< HEAD
 .order-total {
   text-align: right;
   font-weight: bold;
   margin-top: 10px;
 }
-=======
-  .item {
-    flex-basis: calc(93.33% - 20px);
-    margin: 10px 10px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-  }
->>>>>>> 5574d335107c4d3bde6eb314af4ef363d97d83e1
 
 .myorderslogo {
   max-width: 400px;
@@ -128,53 +97,7 @@
   background-color: #FF3333;
 }
 
-<<<<<<< HEAD
 /* Mobile styles using a media query */
-=======
-  .order-header span {
-    font-weight: normal;
-  }
-  .containers {
-    max-width: 35%;
-    padding-right: 100px;
-    padding-left: 100px;
-    border-radius: 10px;
-    margin-top: 300px;
-    background-color: #FFFFF0;
-    }
-    .order-details {
-      margin: 0 auto; /* Center the table horizontally */
-      max-width: fit-content; /* Set the maximum width for the table container */
-    }
-    
-    .order-details table {
-      width: fit-content; /* Set the table width to 100% of its container */
-      border-collapse: collapse; /* Collapse the table borders */
-    }
-    table.center {
-      margin-left: auto; 
-      margin-right: auto;
-    }
-    .order-details th,
-    .order-details td {
-      padding: 8px; /* Add padding to table cells */
-      border:  1px solid #ccc;
-    }
-    
-    .order-details thead th {
-      background-color: #f2f2f2; /* Set background color for table header cells */
-    }
-    
-    .order-details tfoot td {
-      background-color: #f2f2f2; /* Set background color for table footer cells */
-      font-weight: bold; /* Set font weight for total price cell */
-    }
-    
-    table tbody tr:nth-child(even) {
-      background-color: white;
-    }
-    /* Mobile styles using a media query */
->>>>>>> 5574d335107c4d3bde6eb314af4ef363d97d83e1
 @media (max-width: 768px) {
   .tab button {
     padding: 10px 15px; /* Adjust button padding for mobile */
@@ -208,7 +131,6 @@
     font-size: 18px; /* Reduce font size for mobile */
   }
 
-<<<<<<< HEAD
   .myorderslogo {
     max-width: 100%; /* Make the logo responsive */
     margin-left: 0; /* Reset left margin for mobile */
@@ -218,6 +140,4 @@
     padding: 8px 16px; /* Adjust button padding for mobile */
     margin-top: 10px; /* Add top margin for mobile */
   }
-=======
->>>>>>> 5574d335107c4d3bde6eb314af4ef363d97d83e1
 }
