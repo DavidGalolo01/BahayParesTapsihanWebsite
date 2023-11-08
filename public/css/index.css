@@ -1,6 +1,22 @@
+h1 { text-align: left;}
 a {
   text-decoration: none;
 }
+
+.parallax-background {
+  /*For header*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+  background-image: url("/images/headerbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: height 0.3s;
+}
+
 
 nav.navClass {
     display: flex;
@@ -12,10 +28,12 @@ nav.navClass {
     text-align: center;
     max-height: 60px;
 }
+
 .login-section {
-    border: 2px solid black;
     width:100%;
     border-radius: 30px;
+    background-color: white;
+    margin-top: 250px;
 }
 .inputbox{
     position: relative;
@@ -94,19 +112,16 @@ border: 2px solid blue;
 .welcome-section {
     flex: 1;
     max-width: 600px; 
-    
     color: rgb(21, 21, 22);
   }
 
   .special-offers {
   display: flex;
-  justify-content: center; 
-  align-content: center;
   white-space: nowrap; 
   padding: 40px;
   margin-bottom: 30px;
-  background-image: url("/images/wood.jpg");
   border-radius: 20px;
+background-color: #ffffff;
   }
   
   .special-offer {

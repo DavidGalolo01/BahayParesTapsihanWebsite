@@ -1,13 +1,58 @@
 .categories {
     background-color: transparent;
-
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    margin-top: 320px;
-    flex: 1;
-    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    width: 100%;
 }
+
+.category-sidebar {
+    width: 100%;
+}
+
+h1 {
+    height: 85px;
+    opacity: 50%;
+}
+/* Styles for the scroll buttons with added borders */
+.scroll-button {
+    background-color: transparent;
+    border: 1px solid #333; /* Add a border for the scroll buttons */
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px; /* Add some padding to the buttons for better clickability */
+    border-radius: 5px; /* Round the button corners */
+}
+
+/* Adjust border color on hover */
+.scroll-button:hover {
+    border-color: #555;
+    color: #555;
+    transform: scale(1.1);
+}
+
+.scroll-left {
+    float: left;
+}
+
+.scroll-right {
+    float: right;
+}
+
+
+.category-box {
+    display: inline-block;
+    margin: 10px;
+    flex: 1;
+}
+
 
 .category-button {
     background-size: cover;
@@ -20,7 +65,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    width: 100%;
+    width: 250px;
     height: 70px;
     font-size: 20px;
     transition: transform 0.3s;
@@ -213,21 +258,6 @@ p {
 }
 
 
-
-.menu-container {
-    background-color: transparent;
-    padding: 20px;
-
-    border-radius: 8px;
-    height: 1000px;
-    width: 1200px;
-    overflow: hidden;
-    overflow-y: auto;
-    margin-top: 320px;
-    flex: 2;
-
-}
-
 .menu-container::-webkit-scrollbar {
     width: 12px;
     /* Adjust the width of the scrollbar as needed */
@@ -255,6 +285,34 @@ p {
     /* Color of the track on hover */
 }
 
+/* Main container */
+.container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Categories container */
+.categories-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.menu-container {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-height: 900px;
+    order: 2;
+}
+
 .menu-items-container {
     display: flex;
     flex-wrap: wrap;
@@ -263,20 +321,24 @@ p {
     padding: 0 10px;
 }
 
-
 .exit-button {
-    margin-top:20px;
+    margin-top: 20px;
 }
 
-button {
-    background-color: #007bff;
+
+.common-button {
+    background-color: #0e3493;
     color: #fff;
     border: none;
     padding: 10px 10px;
     cursor: pointer;
     display: block;
-    /* Center button horizontally */
+    transition: background-color 0.3s ease;
     margin: 0 auto;
+}
+
+.common-button:hover {
+    background-color: #0a266b;
 }
 
 /* Disabled button styles */
@@ -371,7 +433,6 @@ button:disabled {
 
 .center-items h3 {
     color: rgb(116, 172, 33);
-    font-family: cursive;
     font-size: 1.7rem;
     margin-bottom: 10px;
     transition: transform 0.3s;
@@ -389,7 +450,6 @@ button:disabled {
 .center-items p {
     color: #666;
     font-size: 1rem;
-    line-height: 1.4;
     transition: transform 0.3s;
     align-items: center;
     text-align: center;
@@ -407,7 +467,7 @@ button:disabled {
 
 h2 {
     text-align: center;
-    background-color: rgb(75, 75, 75);
+    background-color: #0e3493;
     color: #fff;
 }
 
@@ -432,7 +492,8 @@ h2 {
 }
 
 .cart-table th {
-    background-color: #f5f5f5;
+    background-color: #0e3493;
+    color: #fff;
 }
 
 /* Cart item rows */
@@ -497,6 +558,7 @@ h2 {
 .cart-icon {
     position: relative;
     cursor: pointer;
+    color: #002DB3;
 }
 
 /* Define the flying animation for the cart icon */
@@ -539,40 +601,20 @@ h2 {
     font-size: 12px;
 }
 
-@media screen and (max-width: 1300px) {
-    .container {
-        flex-direction: column;
-        /* Change to a column layout for smaller screens */
 
-    }
+
+
+@media screen and (max-width: 1300px) {
 
     .categories {
+        display: flex;
         background-color: transparent;
         padding: 20px;
         text-align: center;
-        margin-top: 320px;
-        max-height: 150px;
-        flex: 1;
+        margin-bottom: 320px;
+        width: 90%;
         white-space: nowrap;
-        /* Prevents categories from wrapping to a new line */
-    }
-
-    /* If you want to hide the horizontal scrollbar, you can add the following: */
-    .categories::-webkit-scrollbar {
-        display: none;
-        /* Hide the scrollbar for webkit-based browsers */
-    }
-
-    /* Ensure that the categories are displayed inside a scrollable container */
-    .categories-container {
-        display: flex;
-        overflow: hidden;
-        /* Hide any overflow content that exceeds the container */
-    }
-
-    .menu-container {
-        order: 2;
-        /* Move menu container below categories in the column layout */
+        overflow-x: auto;
     }
 }
 

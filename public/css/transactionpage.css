@@ -1,5 +1,5 @@
 .transaction_container {
-    margin-top: 300px;
+    margin-top: 50px;
 
 }
 
@@ -55,7 +55,9 @@
     margin-top: 5px;
 }
 
-
+.ordersummarybutton {
+    margin-top: 50px;
+}
 
 /* Style the buttons */
 .confirm-order-btn {

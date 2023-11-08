@@ -23,11 +23,11 @@
         <input type="hidden" id="userId" name="userId">
       </div>
       <div class="nav-items">
-        <a href="/">Home</a>
-        <a href="/menu">Menu</a>
-        <a href="/Vieworder">Delivery Status</a>
-        <a href="/AboutUs">About Us</a>
-        <a href="/ContactUs">Customer Care</a>
+        <a href="/"><i class="fas fa-home" style="color: #002DB3;  margin-right: 3px;" ></i> Home</a>
+        <a href="/menu"><i class="fas fa-utensils" style="color: #002DB3;  margin-right: 3px;"></i> Menu</a>
+        <a href="/Vieworder"><i class="fas fa-truck"style="color: #002DB3;  margin-right: 3px;"></i> Delivery Status</a>
+        <a href="/AboutUs"><i class="fas fa-info-circle"style="color: #002DB3;  margin-right: 3px;"></i> About Us</a>
+        <a href="/ContactUs"><i class="fas fa-phone"style="color: #002DB3;  margin-right: 3px;"></i> Customer Care</a>
       </div>
       <div class="dropdown">
         <button id="profileIcon" class="dropbtn" style="display: none;">
@@ -109,14 +109,14 @@
         </div>
         <button type="submit">Submit</button>
       </form>
+      <p>For inquiries, please email <a href="mailto:bahayparestapsihan@gmail.com">bahayparestapsihan@gmail.com</a></p>
     </div>
   </section>
 
   <div class="footer">
     <div class="social-icons">
       <a href="https://www.facebook.com/tapsihansapasongbayog/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.messenger.com/t/100783298129453" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
     </div>
     <div class="copyright">
       &copy; 2023 Bahay Pares Tapsihan – Dasmariñas.
@@ -126,32 +126,28 @@
   <script>
     const username = sessionStorage.getItem('username');
     const userId = sessionStorage.getItem('userId');
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
 
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData.entries());
+    function sendEmail() {
+      const fname = document.getElementById('fname').value;
+      const lname = document.getElementById('lname').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
 
-      fetch('/insertcomments', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.message === 'Feedback messaged successfully!') {
-            alert('Thank you for your feedback!');
-            document.getElementById('contactForm').reset();
-          } else {
-            alert('An error occurred while submitting the form.');
-          }
-        })
-        .catch(error => {
-          console.error('Error submitting form:', error);
-          alert('An error occurred while submitting the form.');
-        });
+      const subject = 'Contact Us Inquiry';
+      const body = `First Name: ${fname}\nLast Name: ${lname}\nEmail: ${email}\nMessage: ${message}`;
+      const recipient = 'bahayparestapsihan@gmail.com';
+
+      const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open the user's default email application
+      window.location.href = mailtoLink;
+    }
+
+    // Attach the sendEmail function to the Submit button's click event
+    const submitButton = document.querySelector('form button');
+    submitButton.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent the form submission
+      sendEmail();
     });
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -232,13 +228,6 @@
         });
     });
 
-    const parallaxBackground = document.querySelector('.parallax-background');
-
-    window.addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
-      // Adjust the image height based on the scroll position
-      parallaxBackground.style.height = 400 - scrollPosition * 0.5 + 'px';
-    });
   </script>
 </body>
 

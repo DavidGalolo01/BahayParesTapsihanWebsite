@@ -3,10 +3,22 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FFFFF0;
   color: #333;
   line-height: 2;
  
+}
+.parallax-background {
+  /*For header*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  z-index: -1;
+  background-image: url("/images/headerbackground.png");
+  background-size: cover;
+  background-position: center;
+  transition: height 0.3s;
 }
 
 h2 {
@@ -40,6 +52,10 @@ h2 {
   justify-content: center;
 }
 
+.contactuslogo {
+  max-width: 400px;
+  margin: 5px;
+}
 
 .signin-login-section {
   position: relative;

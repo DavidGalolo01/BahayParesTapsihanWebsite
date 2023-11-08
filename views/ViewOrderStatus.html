@@ -24,11 +24,11 @@
         <input type="hidden" id="userId" name="userId">
       </div>
       <div class="nav-items">
-        <a href="/">Home</a>
-        <a href="/menu">Menu</a>
-        <a href="/Vieworder">Delivery Status</a>
-        <a href="/AboutUs">About Us</a>
-        <a href="/ContactUs">Customer Care</a>
+        <a href="/"><i class="fas fa-home" style="color: #002DB3;  margin-right: 3px;" ></i> Home</a>
+        <a href="/menu"><i class="fas fa-utensils" style="color: #002DB3;  margin-right: 3px;"></i> Menu</a>
+        <a href="/Vieworder"><i class="fas fa-truck"style="color: #002DB3;  margin-right: 3px;"></i> Delivery Status</a>
+        <a href="/AboutUs"><i class="fas fa-info-circle"style="color: #002DB3;  margin-right: 3px;"></i> About Us</a>
+        <a href="/ContactUs"><i class="fas fa-phone"style="color: #002DB3;  margin-right: 3px;"></i> Customer Care</a>
       </div>
       <div class="dropdown">
         <button id="profileIcon" class="dropbtn" style="display: none;">
@@ -86,11 +86,9 @@
       </div>
     </div>
   </header>
-
-  <div class="parallax-background"></div>
   <br>
   <div class="containers">
-    <h2 align="center">My Orders</h2>
+    <img src="/images/myorderslogo.png" alt="Profile" class="myorderslogo">
     <div class="tab">
       <button class="tablinks" id="active" onclick="openTab('active')">Active Orders</button>
       <button class="tablinks" id="past" onclick="openTab('past')">Past Orders</button>
@@ -104,11 +102,9 @@
   </div>
 
   <div class="footer">
-
     <div class="social-icons">
       <a href="https://www.facebook.com/tapsihansapasongbayog/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.messenger.com/t/100783298129453" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
     </div>
     <div class="copyright">
       &copy; 2023 Bahay Pares Tapsihan – Dasmariñas.
@@ -515,13 +511,6 @@
         });
     });
 
-    const parallaxBackground = document.querySelector('.parallax-background');
-
-    window.addEventListener('scroll', function () {
-      const scrollPosition = window.scrollY;
-      // Adjust the image height based on the scroll position
-      parallaxBackground.style.height = 400 - scrollPosition * 0.5 + 'px';
-    });
   </script>
 
 

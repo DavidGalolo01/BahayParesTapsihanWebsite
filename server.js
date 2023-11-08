@@ -446,6 +446,61 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+app.post('/sendorderemail', async (req, res) => {
+  try {
+    const { userId, orderId, items, location, discount, totalprice, paymentmethod, deliverystatus, specialinstruction } = req.body;
+
+    const emailContent = `
+          <h1>New Order Received</h1>
+          <h2>Order Details:</h2>
+          <p><strong>User ID:</strong> ${userId}</p>
+          <p><strong>Order ID:</strong> ${orderId}</p>
+          <h3>Order:</h3>
+          <ul>
+            ${items.map(
+              (item) => `
+                <li>
+                  <p><strong>Item Name:</strong> ${item.name}</p>
+                  <p><strong>Quantity:</strong> ${item.quantity}</p>
+                </li>
+              `
+            ).join('')}
+          </ul>
+          <h3>Location: ${location}</h3>
+          <h3>Discount:</h3>
+          <ul>
+            <li><strong>Selected Discount:</strong> ${discount.SelectedDiscount}</li>
+            <li><strong>Card Name:</strong> ${discount.CardName}</li>
+            <li><strong>Card ID:</strong> ${discount.CardId}</li>
+            <li><strong>Customer Discount:</strong> ${discount.CustomerDiscount}</li>
+          </ul>
+          <h3>Total Price:</h3>
+          <ul>
+            <li><strong>Subtotal:</strong> ${totalprice.Subtotal}</li>
+            <li><strong>Delivery Fee:</strong> ${totalprice.DeliveryFee}</li>
+            <li><strong>Discount:</strong> ${totalprice.Discount}</li>
+            <li><strong>Total:</strong> ${totalprice.Total}</li>
+          </ul>
+          <p><strong>Payment Method:</strong> ${paymentmethod}</p>
+          <p><strong>Delivery Status:</strong> ${deliverystatus}</p>
+          <h3>Special Instruction: ${specialinstruction}</h3>
+    `;
+
+    // Create the email message
+    const mailOptions = {
+      from: 'bahayparestapsihandasma@gmail.com',
+      to: 'davidgalolo56@gmail.com', // Replace with the staff's email address
+      subject: 'New Order Received',
+      html: emailContent
+    };
+
+    // Send the email
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 function sendVerificationEmail(email, verificationLink) {
   const mailOptions = {
     from: 'bahayparestapsihandasma@gmail.com',
@@ -1884,6 +1939,7 @@ app.post('/storeOrder', async (req, res) => {
     totalprice,
     paymentmethod,
     deliverystatus,
+    specialinstruction,
   } = req.body;
 
   try {
@@ -1923,7 +1979,8 @@ app.post('/storeOrder', async (req, res) => {
       totalprice,
       paymentmethod,
       deliverystatus,
-      orderDate // Add the orderDate field
+      orderDate,
+      specialinstruction,
     });
 
     console.log('Order data saved to MongoDB:', result.insertedId);

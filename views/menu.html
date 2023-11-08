@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-solid.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/sharp-light.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -29,11 +30,14 @@
                 <input type="hidden" id="userId" name="userId">
             </div>
             <div class="nav-items">
-                <a href="/">Home</a>
-                <a href="/menu">Menu</a>
-                <a href="/Vieworder">Delivery Status</a>
-                <a href="/AboutUs">About Us</a>
-                <a href="/ContactUs">Customer Care</a>
+                <a href="/"><i class="fas fa-home" style="color: #002DB3;  margin-right: 3px;"></i> Home</a>
+                <a href="/menu"><i class="fas fa-utensils" style="color: #002DB3;  margin-right: 3px;"></i> Menu</a>
+                <a href="/Vieworder"><i class="fas fa-truck" style="color: #002DB3;  margin-right: 3px;"></i> Delivery
+                    Status</a>
+                <a href="/AboutUs"><i class="fas fa-info-circle" style="color: #002DB3;  margin-right: 3px;"></i> About
+                    Us</a>
+                <a href="/ContactUs"><i class="fas fa-phone" style="color: #002DB3;  margin-right: 3px;"></i> Customer
+                    Care</a>
             </div>
             <div class="cart-icon" id="cartIcon">
                 <i class="fas fa-shopping-cart fa-2x"></i>
@@ -108,60 +112,65 @@
     <div class="container">
         <div class="categories-container">
             <div class="category-sidebar">
-            <div class="categories">
-                <div class="category-separator">
-                    <input id="show-all-button" class="category-button" type="button" value="SHOW All"
-                        style="background: url('/images/bundle2.jpg') no-repeat; background-size: cover; ">
-                    
-                </div>
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="COVID MEALS" value="COVID MEALS"
-                        style="background: url('/images/bahaypares_covidmeals.jpg') no-repeat; background-size:100%; ">
+                <div class="categories">
+                    <div class="category-separator">
+                        <input id="show-all-button" class="category-button" type="button" value="SHOW All"
+                            style="background: url('/images/bundle2.jpg') no-repeat; background-size: cover; ">
+
+                    </div>
+                    <h1>|</h1>
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="COVID MEALS" value="COVID MEALS"
+                            style="background: url('/images/bahaypares_covidmeals.jpg') no-repeat; background-size:100%; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="SILOG MEALS" value="SILOG MEALS"
+                            style="background: url('/images/silogbundle.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="PARES MEALS" value="PARES MEALS"
+                            style="background: url('/images/bahaypares_pares.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="ALA CARTE" value="ALA CARTE"
+                            style="background: url('/images/bahaypares_alacarte.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="ISOLATION SPECIAL"
+                            value="ISOLATION SPECIAL"
+                            style="background: url('/images/bahaypares_isolation.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="EXTRA MEALS" value="EXTRA MEALS"
+                            style="background: url('/images/bahaypares_extrameals.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="DELTA VARIANT" value="DELTA VARIANT"
+                            style="background: url('/images/bahaypares_deltavariant.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="BEVERAGES" value="BEVERAGES"
+                            style="background: url('/images/bahaypares_drinks.jpg') no-repeat; background-size: cover; ">
+                    </div>
+
+                    <div class="category-box">
+                        <input class="category-button" type="button" data-category="OTHERS" value="OTHERS"
+                            style="background: url('/images/bundle2.jpg') no-repeat; background-size: cover; ">
+                    </div>
+                    <h1>|</h1>
                 </div>
 
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="SILOG MEALS" value="SILOG MEALS"
-                        style="background: url('/images/silogbundle.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="PARES MEALS" value="PARES MEALS"
-                        style="background: url('/images/bahaypares_pares.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="ALA CARTE" value="ALA CARTE"
-                        style="background: url('/images/bahaypares_alacarte.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="ISOLATION SPECIAL"
-                        value="ISOLATION SPECIAL"
-                        style="background: url('/images/bahaypares_isolation.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="EXTRA MEALS" value="EXTRA MEALS"
-                        style="background: url('/images/bahaypares_extrameals.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="DELTA VARIANT" value="DELTA VARIANT"
-                        style="background: url('/images/bahaypares_deltavariant.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="BEVERAGES" value="BEVERAGES"
-                        style="background: url('/images/bahaypares_drinks.jpg') no-repeat; background-size: cover; ">
-                </div>
-
-                <div class="category-box">
-                    <input class="category-button" type="button" data-category="OTHERS" value="OTHERS"
-                        style="background: url('/images/bundle2.jpg') no-repeat; background-size: cover; ">
-                </div>
+                <button class="scroll-button scroll-left">&lt;</button>
+                <button class="scroll-button scroll-right">&gt;</button>
             </div>
         </div>
-    </div>
         <!--<div class="categories">
             <h2>Categories</h2>
             <div class="category-item"><a href="/dishes">Dishes</a></div>
@@ -169,36 +178,37 @@
             <div class="category-item"><a href="/cocktail">Cocktails</a></div>
         </div>-->
         <div class="menu-container">
-           
-                <!-- Category Header --> 
-                <h1 id="category-header" >COVID MEALS</h1>
-                <!--Search-->
-                <div class="search-container">
-                    <input type="text" id="search-input" placeholder="Search for items...">
-                    <button id="search-button" style="display: none;">Search</button>
-                    <div class="allergen-logo">
-                        <a href="link-to-milk" data-icon="Milk"><i class="fa-solid fa-cow"></i></a>
-                        <a href="link-to-eggs" data-icon="Egg"><i class="fas fa-egg"></i></a>
-                        <a href="link-to-soy" data-icon="Fish"><i class="fa-solid fa-shrimp"></i></a>
-                        <a href="link-to-soy" data-icon="Tree nut"><i class="fa-solid fa-acorn"></i></a>
-                        <a href="link-to-soy" data-icon="Peanut"><i class="fa-solid fa-peanuts"></i></a>
-                        <a href="link-to-wheat" data-icon="bread"><i class="fas fa-bread-slice"></i></a>
-                        <a href="link-to-soybean" data-icon="Soy"><i class="fa-brands fa-pagelines"></i></a>
-                        <label id="currentFilterLabel">Current Filter: </label>
-                    </div>
-                </div>
 
-                <div class="menu-items-container" id="menuTableBody2">
-                    <!-- Menu items will be dynamically populated here -->
+            <!-- Category Header -->
+            <h1 id="category-header">COVID MEALS</h1>
+            <!--Search-->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for items...">
+                <button id="search-button" style="display: none;">Search</button>
+                <div class="allergen-logo">
+                    <a href="link-to-milk" data-icon="Milk"><i class="fa-solid fa-cow"></i></a>
+                    <a href="link-to-eggs" data-icon="Egg"><i class="fas fa-egg"></i></a>
+                    <a href="link-to-soy" data-icon="Fish"><i class="fa-solid fa-shrimp"></i></a>
+                    <a href="link-to-soy" data-icon="Tree nut"><i class="fa-solid fa-acorn"></i></a>
+                    <a href="link-to-soy" data-icon="Peanut"><i class="fa-solid fa-peanuts"></i></a>
+                    <a href="link-to-wheat" data-icon="bread"><i class="fas fa-bread-slice"></i></a>
+                    <a href="link-to-soybean" data-icon="Soy"><i class="fa-brands fa-pagelines"></i></a>
+                    <label id="currentFilterLabel">Current Filter: </label>
                 </div>
+            </div>
+
+            <div class="menu-items-container" id="menuTableBody2">
+                <!-- Menu items will be dynamically populated here -->
+            </div>
         </div>
 
         <aside class="cart">
-            <button id="close-cart" class="exit-button"> <!-- Change the ID to close-cart -->
+            <button id="close-cart" class="exit-button">
+                <!-- Change the ID to close-cart -->
                 <i class="fas fa-times"></i>
             </button>
             <h2>Cart</h2>
-            
+
 
             <table class="cart-table">
                 <thead>
@@ -216,7 +226,7 @@
         </aside>
 
     </div>
-   
+
 
     <!-- Overlay for "Restaurant Closed" -->
     <div id="overlay" class="overlay">
@@ -230,23 +240,68 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="social-icons">
-            <a href="https://www.facebook.com/tapsihansapasongbayog/" target="_blank"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <footer>
+        <div class="footer">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/tapsihansapasongbayog/" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.messenger.com/t/100783298129453" target="_blank"><i
+                        class="fab fa-facebook-messenger"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Bahay Pares Tapsihan – Dasmariñas.
+            </div>
         </div>
-        <div class="copyright">
-            &copy; 2023 Bahay Pares Tapsihan – Dasmariñas.
-        </div>
-    </div>
+    </footer>
 
     <script>
         window.onload = function () {
             checkRestaurantState();
             fetchMenuData("COVID MEALS");
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoriesContainer = document.querySelector('.categories');
+            const scrollButtons = document.querySelectorAll('.scroll-button');
+            const scrollStep = 550; // Adjust the scrolling step as needed
+
+            scrollButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    if (this.classList.contains('scroll-left')) {
+                        const newPosition = categoriesContainer.scrollLeft - scrollStep;
+                        smoothScrollTo(categoriesContainer, newPosition,
+                        500); // Adjust the duration (500ms) as needed
+                    } else if (this.classList.contains('scroll-right')) {
+                        const newPosition = categoriesContainer.scrollLeft + scrollStep;
+                        smoothScrollTo(categoriesContainer, newPosition,
+                        500); // Adjust the duration (500ms) as needed
+                    }
+                });
+            });
+
+            // Function to perform smooth scrolling
+            function smoothScrollTo(element, to, duration) {
+                const start = element.scrollLeft;
+                const change = to - start;
+                const startTime = performance.now();
+                const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+                function animateScroll() {
+                    const currentTime = performance.now();
+                    const elapsed = currentTime - startTime;
+                    element.scrollLeft = start + change * easeInOutQuad(elapsed / duration);
+                    if (elapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    } else {
+                        element.scrollLeft = to;
+                    }
+                }
+
+                animateScroll();
+            }
+        });
+
+
         // Add this at the beginning of your JavaScript code
         const loadingOverlay = document.getElementById('loading-overlay');
         const loadingSpinner = document.getElementById('loading-spinner');
@@ -257,7 +312,7 @@
         let currentFilterTerm = ''; // Track the current filter term
         let searchInputValue = ''; // Track the current search input value
         let iconFilterTerm = ''; // Track the current icon filter term
-        
+
         // Function to show the loading overlay
         function showLoading() {
             loadingOverlay.style.display = 'block';
@@ -296,7 +351,7 @@
                 const iconText = event.currentTarget.dataset.icon; // Get the data-icon attribute
                 const icon = event.currentTarget.querySelector('i'); // Get the icon element
 
-                
+
                 const previouslySelectedIcon = document.querySelector('.toggled-icon');
 
                 if (previouslySelectedIcon) {
@@ -304,13 +359,13 @@
                 }
                 // Toggle the icon filter term
                 if (iconFilterTerm === iconText.toLowerCase()) {
-                    iconFilterTerm = ''; 
-                    currentFilterLabel.textContent = 'Current Filter: None'; 
+                    iconFilterTerm = '';
+                    currentFilterLabel.textContent = 'Current Filter: None';
                     console.log(`${iconText} is toggled off.`);
-                    
+
                 } else {
                     iconFilterTerm = iconText.toLowerCase();
-                    currentFilterLabel.textContent = `Current Filter: ${iconText}`; 
+                    currentFilterLabel.textContent = `Current Filter: ${iconText}`;
                     console.log(`${iconText} is toggled on.`);
                     icon.classList.add('toggled-icon');
                 }
@@ -811,114 +866,114 @@
             }
         }
         document.addEventListener('DOMContentLoaded', function () {
-      // Click event handler for the Profile link
-      const profileLink = document.querySelector('a3[href="/Profile"]');
-      profileLink.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default navigation behavior
-        const welcomeUsername = document.getElementById('welcomeUsername').textContent;
-        sessionStorage.setItem('welcomeUsername', welcomeUsername);
-        window.location.href = '/Profile'; // Navigate to the "Profile" page
-      })
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const menuIcon = document.querySelector('.menu-icon'); // Change the selector to use class
-      const drawer = document.querySelector('.drawer');
-      const profileIcon = document.getElementById('profileIcon');
-      const logoutButton = document.getElementById('logoutButton');
-      const profileMenu = document.getElementById('profileMenu');
-      const logoutMenu = document.getElementById('logoutMenu');
-      menuIcon.addEventListener('click', function () {
-        if (drawer.style.left === '0px' || !drawer.style.left) {
-          drawer.style.left = '-250px'; // Hide the drawer
-        } else {
-          drawer.style.left = '0'; // Show the drawer
-        }
-      });
-
-      const closeDrawerButton = document.getElementById('closeDrawer');
-      closeDrawerButton.addEventListener('click', function () {
-        drawer.style.left = '-250px'; // Hide the drawer
-      });
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-      const logoutButton = document.getElementById('logoutButton');
-      const logoutMenu = document.getElementById('logoutMenu');
-      fetch('/check-auth', {
-          method: 'GET',
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.isAuthenticated) {
-            const profileIcon = document.getElementById('profileIcon');
-            const profileMenu = document.getElementById('profileMenu');
-            profileIcon.style.display = 'block';
-            profileMenu.style.display = 'block'; // Show in drawer
-            logoutMenu.style.display = 'block';
-            // Add a click event listener to the logout button
-            logoutButton.addEventListener('click', function () {
-              // Display a confirmation dialog
-              const isConfirmed = window.confirm('Are you sure you want to logout?');
-
-              // Check if the user confirmed the logout
-              if (isConfirmed) {
-                // Send a logout request to the server when confirmed
-                fetch('/logout', { // Check if this URL is correct
-                    method: 'GET',
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                    if (data.message === 'Logout successful') {
-                      // Redirect to the login page or another page after logout
-                      window.location.href = '/';
-                    } else {
-                      console.error('Logout failed:', data.error);
-                    }
-                  })
-                  .catch(error => {
-                    console.error('Error during logout:', error);
-                  });
-              }
-            });
-            logoutMenu.addEventListener('click', function () {
-              // Display a confirmation dialog
-              const isConfirmed = window.confirm('Are you sure you want to logout?');
-
-              // Check if the user confirmed the logout
-              if (isConfirmed) {
-                // Send a logout request to the server when confirmed
-                fetch('/logout', { // Check if this URL is correct
-                    method: 'GET',
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                    if (data.message === 'Logout successful') {
-                      // Redirect to the login page or another page after logout
-                      window.location.href = '/';
-                    } else {
-                      console.error('Logout failed:', data.error);
-                    }
-                  })
-                  .catch(error => {
-                    console.error('Error during logout:', error);
-                  });
-              }
-            });
-          } else {
-            const profileIcon = document.getElementById('profileIcon');
-            logoutButton.style.display = 'none';
-            profileIcon.style.display = 'none';
-            const profileMenu = document.getElementById('profileMenu');
-            profileMenu.style.display = 'none'; // Show in drawer
-            logoutMenu.style.display = 'none';
-
-
-          }
-        })
-        .catch(error => {
-          console.error('Error checking authentication:', error);
+            // Click event handler for the Profile link
+            const profileLink = document.querySelector('a3[href="/Profile"]');
+            profileLink.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default navigation behavior
+                const welcomeUsername = document.getElementById('welcomeUsername').textContent;
+                sessionStorage.setItem('welcomeUsername', welcomeUsername);
+                window.location.href = '/Profile'; // Navigate to the "Profile" page
+            })
         });
-    });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuIcon = document.querySelector('.menu-icon'); // Change the selector to use class
+            const drawer = document.querySelector('.drawer');
+            const profileIcon = document.getElementById('profileIcon');
+            const logoutButton = document.getElementById('logoutButton');
+            const profileMenu = document.getElementById('profileMenu');
+            const logoutMenu = document.getElementById('logoutMenu');
+            menuIcon.addEventListener('click', function () {
+                if (drawer.style.left === '0px' || !drawer.style.left) {
+                    drawer.style.left = '-250px'; // Hide the drawer
+                } else {
+                    drawer.style.left = '0'; // Show the drawer
+                }
+            });
+
+            const closeDrawerButton = document.getElementById('closeDrawer');
+            closeDrawerButton.addEventListener('click', function () {
+                drawer.style.left = '-250px'; // Hide the drawer
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const logoutButton = document.getElementById('logoutButton');
+            const logoutMenu = document.getElementById('logoutMenu');
+            fetch('/check-auth', {
+                    method: 'GET',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.isAuthenticated) {
+                        const profileIcon = document.getElementById('profileIcon');
+                        const profileMenu = document.getElementById('profileMenu');
+                        profileIcon.style.display = 'block';
+                        profileMenu.style.display = 'block'; // Show in drawer
+                        logoutMenu.style.display = 'block';
+                        // Add a click event listener to the logout button
+                        logoutButton.addEventListener('click', function () {
+                            // Display a confirmation dialog
+                            const isConfirmed = window.confirm('Are you sure you want to logout?');
+
+                            // Check if the user confirmed the logout
+                            if (isConfirmed) {
+                                // Send a logout request to the server when confirmed
+                                fetch('/logout', { // Check if this URL is correct
+                                        method: 'GET',
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if (data.message === 'Logout successful') {
+                                            // Redirect to the login page or another page after logout
+                                            window.location.href = '/';
+                                        } else {
+                                            console.error('Logout failed:', data.error);
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error during logout:', error);
+                                    });
+                            }
+                        });
+                        logoutMenu.addEventListener('click', function () {
+                            // Display a confirmation dialog
+                            const isConfirmed = window.confirm('Are you sure you want to logout?');
+
+                            // Check if the user confirmed the logout
+                            if (isConfirmed) {
+                                // Send a logout request to the server when confirmed
+                                fetch('/logout', { // Check if this URL is correct
+                                        method: 'GET',
+                                    })
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        if (data.message === 'Logout successful') {
+                                            // Redirect to the login page or another page after logout
+                                            window.location.href = '/';
+                                        } else {
+                                            console.error('Logout failed:', data.error);
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error during logout:', error);
+                                    });
+                            }
+                        });
+                    } else {
+                        const profileIcon = document.getElementById('profileIcon');
+                        logoutButton.style.display = 'none';
+                        profileIcon.style.display = 'none';
+                        const profileMenu = document.getElementById('profileMenu');
+                        profileMenu.style.display = 'none'; // Show in drawer
+                        logoutMenu.style.display = 'none';
+
+
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking authentication:', error);
+                });
+        });
 
         // Event listener for real-time search as the user types
         searchInput.addEventListener('input', () => {
@@ -989,14 +1044,6 @@
                 }
             });
         }
-
-        const parallaxBackground = document.querySelector('.parallax-background');
-
-        window.addEventListener('scroll', function () {
-            const scrollPosition = window.scrollY;
-            // Adjust the image height based on the scroll position
-            parallaxBackground.style.height = 400 - scrollPosition * 0.5 + 'px';
-        });
     </script>
 
 
